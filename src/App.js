@@ -8,7 +8,7 @@ import Rank from './Components/Rank/Rank';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import Particles from 'react-particles-js';
 import './App.css';
-import Clarifai from 'clarifai';
+// import Clarifai from 'clarifai';
 
 
 const particlesOptions = 
