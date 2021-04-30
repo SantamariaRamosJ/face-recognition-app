@@ -18,10 +18,10 @@ const particlesOptions =
 {
   particles: {
     number: {
-      value: 80,
-      desnsity: {
+      value: 120,
+      density: {
         enable: true, 
-        value_area: 900
+        value_area: 800
       }
     },
     move: {
@@ -56,14 +56,11 @@ const initialState = {
       }
     }
 
-  
 class App extends Component {
   constructor(props) {
     super();
     this.state = initialState;
     }
-  
-
 
   loadUser = (data) => {
     this.setState({user: {
@@ -74,8 +71,6 @@ class App extends Component {
         joined: data.joined
     }})
   }
-
-
 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -91,7 +86,7 @@ class App extends Component {
   }
 
   displayFaceBox = (box) =>{
-    console.log(box);
+    // console.log(box);
     this.setState({box: box});
   }
 
@@ -145,7 +140,10 @@ class App extends Component {
           <Particles className='particles' 
             params={particlesOptions}
           />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} /> 
+        <Navigation 
+          isSignedIn={isSignedIn} 
+          onRouteChange={this.onRouteChange} 
+        /> 
         {route === 'home' 
         ? <div>
             <Logo />
@@ -157,7 +155,10 @@ class App extends Component {
               onInputchange={this.onInputchange} 
               onSubmit={this.onsubmit} 
               />
-            <FaceRecognition box={box} imageUrl={imageUrl} />
+            <FaceRecognition 
+              box={box} 
+              imageUrl={imageUrl} 
+            />
           </div>
           : (
             route === 'signin'
