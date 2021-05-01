@@ -6,3 +6,8 @@
     justify-content: center;
     cursor: pointer;
 }
+
+#inputImage {
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
